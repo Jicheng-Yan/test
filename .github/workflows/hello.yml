@@ -1,9 +1,11 @@
-name: Hello, world!
-on: push
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   build:
-    name: Greeting
+    name: Check the contents of the file
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - uses: actions/checkout@v1
+      - run: cat sample.txt
